@@ -1,0 +1,6 @@
+version: '3'
+services:
+  demo-boot-deploy:
+    image: 899150741402.dkr.ecr.us-east-2.amazonaws.com/demo-boot-deploy:latest
+    ports:
+      - 8080:8080

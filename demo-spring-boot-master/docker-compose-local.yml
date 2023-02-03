@@ -1,0 +1,8 @@
+services:
+  demo-boot-deploy:
+    image: demo-boot-deploy
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080

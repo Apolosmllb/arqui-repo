@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: customer-net-service
+          uri: lb://customer-net-service
+          predicates:
+            - Path=/customers/**
+        - id: product-net-service
+          uri: lb://product-net-service
+          predicates:
+            - Path=/products/**
+        - id: invoice-net-service
+          uri: lb://invoice-net-service
+          predicates:
+            - Path=/invoices/**
